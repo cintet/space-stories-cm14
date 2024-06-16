@@ -142,7 +142,8 @@
       params:
         volume: -8
   - type: XenoAnnounceDeath
-    message: Внезапная дрожь пронеслась по улью... Королева убита! Мы отомстим!
+    message: cm-xeno-death-queen
+    color: "#921992"
   - type: XenoTimeHealth
     critThreshold: 1000
     deadThreshold: 1100

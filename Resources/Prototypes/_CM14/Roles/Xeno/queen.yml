@@ -19,6 +19,9 @@
   jobEntity: CMXenoQueen
   hidden: false
   supervisors: nobody
+  accessGroups:
+  - CMAccessXeno
+  - CMAccessXenoQueen
 
 - type: entity
   parent: CMXenoSpawnPointJobBase
