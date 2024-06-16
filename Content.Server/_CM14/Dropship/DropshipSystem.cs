@@ -122,11 +122,11 @@ public sealed class DropshipSystem : SharedDropshipSystem
 
         if (user != null && hijack)
         {
-            var xenoText = "The Queen has commanded the metal bird to depart for the metal hive in the sky! Rejoice!";
+            var xenoText = "Королева приказала металлической птице отправиться в небесный металлический улей! Радуйтесь!";
             _xenoAnnounce.AnnounceSameHive(user.Value, xenoText);
             _audio.PlayPvs(dropship.LocalHijackSound, shuttle.Value);
 
-            var marineText = "Unscheduled dropship departure detected from operational area. Hijack likely. Shutting down autopilot.";
+            var marineText = "Обнаружен незапланированный вылет шаттла из оперативной зоны. Вероятен захват. Отключаю автопилот.";
             _marineAnnounce.Announce(shuttle.Value, marineText, dropship.AnnounceHijackIn);
 
             var marines = Filter.Empty().AddWhereAttachedEntity(e => !HasComp<XenoComponent>(e));
