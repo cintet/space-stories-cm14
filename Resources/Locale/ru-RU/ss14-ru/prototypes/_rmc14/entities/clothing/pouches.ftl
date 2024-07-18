@@ -1,7 +1,7 @@
 ent-CMPouch = абстрактный чехол
     .desc = Физическое проявление концепции мешочка. Ух ты.
 ent-CMPouchStorage = подсумок
-  .desc = { ent-CMPouch.desc }
+    .desc = { ent-CMPouch.desc }
 ent-CMPouchClosed = { ent-CMPouch }
     .desc = { ent-CMPouch.desc }
 ent-CMPouchOpenClosed = { ent-CMPouchClosed }
