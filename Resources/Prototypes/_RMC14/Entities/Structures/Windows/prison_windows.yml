@@ -29,6 +29,25 @@
     key: window
     base: prison_window
     mode: CardinalFlags
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          RMCWindowFramePrison:
+            min: 1
+            max: 1
+          CMShardGlass:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   # TODO RMC14 40 hp
 
 - type: entity
@@ -63,6 +82,25 @@
     key: window
     base: prison_rwindow
     mode: CardinalFlags
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          RMCWindowFramePrison:
+            min: 1
+            max: 1
+          CMShardGlass:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
   # TODO RMC14 100 hp
 
 - type: entity
