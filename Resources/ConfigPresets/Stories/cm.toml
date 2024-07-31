@@ -5,7 +5,7 @@
 hostname         = "📚 Space Stories - Colonial Marines 🌍 [TTS]"
 desc             = ""
 lobbyenabled     = true
-lobbyduration    = 180
+lobbyduration    = 300
 soft_max_players = 200
 map_pool         = "CMDefaultMapPool"
 
