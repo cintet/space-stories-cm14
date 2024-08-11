@@ -1,0 +1,11 @@
+# Stories
+
+- type: entity
+  parent: WeaponSMGM63
+  id: CadetWeaponSMGM63
+  components:
+  - type: GunIFF
+  - type: GunUserWhitelist
+    whitelist:
+      components:
+      - CadetWhitelist

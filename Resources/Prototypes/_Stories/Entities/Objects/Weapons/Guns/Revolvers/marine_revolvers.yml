@@ -1,0 +1,11 @@
+# Stories
+
+- type: entity
+  parent: RMCWeaponRevolverM44
+  id: RMCCadetWeaponRevolverM44
+  components:
+  - type: GunIFF
+  - type: GunUserWhitelist
+    whitelist:
+      components:
+      - CadetWhitelist

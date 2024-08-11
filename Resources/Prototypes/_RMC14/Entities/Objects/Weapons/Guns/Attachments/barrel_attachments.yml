@@ -28,7 +28,6 @@
         wieldedOnly: true
       accuracyAddMult: 0.2
       fireRate: 1.2
-      projectileSpeedFlat: 10
     - projectileSpeedFlat: 10
   - type: AttachableWieldDelayMods
     modifiers:

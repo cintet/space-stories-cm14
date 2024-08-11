@@ -7,21 +7,11 @@
     size: Large
   - type: AmmoCounter
   - type: Gun
-    minAngle: 20
-    maxAngle: 75
-    angleIncrease: 25
-    angleDecay: 45
-    fireRate: 6
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
     - Burst
     - FullAuto
-  - type: GunWieldBonus
-    minAngle: -10
-    maxAngle: -55
-    angleIncrease: -5
-    angleDecay: 10
   - type: RMCSelectiveFire
     baseFireModes:
     - SemiAuto
@@ -140,15 +130,3 @@
       rmc-aslot-rail: 0.032, 0.155
       rmc-aslot-stock: -0.81, 0.032
       rmc-aslot-underbarrel: 0.25, -0.25
-
-# Stories
-
-- type: entity
-  parent: WeaponSMGM63
-  id: CadetWeaponSMGM63
-  components:
-  - type: GunIFF
-  - type: GunUserWhitelist
-    whitelist:
-      components:
-      - CadetWhitelist

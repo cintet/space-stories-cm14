@@ -84,11 +84,6 @@
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: Gun
-    minAngle: 30
-    maxAngle: 60
-    angleIncrease: 10
-    angleDecay: 5
-    fireRate: 4
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -96,11 +91,6 @@
     - FullAuto
     soundGunshot:
       collection: CMM54CShoot
-  - type: GunWieldBonus
-    minAngle: -20
-    maxAngle: -45
-    angleIncrease: -8
-    angleDecay: 0
   - type: RMCSelectiveFire
     baseFireModes:
     - SemiAuto
@@ -279,22 +269,12 @@
   - type: Clothing
     sprite: _RMC14/Objects/Weapons/Guns/Rifles/m4spr.rsi
   - type: Gun
-    minAngle: 20
-    maxAngle: 70
-    angleIncrease: 25
-    angleDecay: 45
-    fireRate: 3.3
     shotsPerBurst: 0
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     soundGunshot:
       path: /Audio/_RMC14/Weapons/Guns/Gunshots/gun_m4spr.ogg
-  - type: GunWieldBonus
-    minAngle: -20
-    maxAngle: -62
-    angleIncrease: -5
-    angleDecay: 10
   - type: RMCSelectiveFire
     baseFireModes:
     - SemiAuto
@@ -440,25 +420,3 @@
 
 - type: Tag
   id: WeaponRifleM54CE2
-
-# Stories
-
-- type: entity
-  parent: WeaponRifleM54C
-  id: CadetWeaponRifleM54C
-  components:
-  - type: GunIFF
-  - type: GunUserWhitelist
-    whitelist:
-      components:
-      - CadetWhitelist
-
-- type: entity
-  parent: WeaponRifleM4SPR
-  id: CadetWeaponRifleM4SPR
-  components:
-  - type: GunIFF
-  - type: GunUserWhitelist
-    whitelist:
-      components:
-      - CadetWhitelist

@@ -1,0 +1,11 @@
+# Stories
+
+- type: entity
+  parent: WeaponShotgunM42A2
+  id: CadetWeaponShotgunM42A2
+  components:
+  - type: GunIFF
+  - type: GunUserWhitelist
+    whitelist:
+      components:
+      - CadetWhitelist

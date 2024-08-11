@@ -34,7 +34,3 @@
     tags:
     - Taser
     - Sidearm
-  - type: GunUserWhitelist
-    whitelist:
-      components:
-      - BaseGunWhitelist

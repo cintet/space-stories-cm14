@@ -1,0 +1,21 @@
+# Stories
+
+- type: entity
+  parent: WeaponRifleM54C
+  id: CadetWeaponRifleM54C
+  components:
+  - type: GunIFF
+  - type: GunUserWhitelist
+    whitelist:
+      components:
+      - CadetWhitelist
+
+- type: entity
+  parent: WeaponRifleM4SPR
+  id: CadetWeaponRifleM4SPR
+  components:
+  - type: GunIFF
+  - type: GunUserWhitelist
+    whitelist:
+      components:
+      - CadetWhitelist
