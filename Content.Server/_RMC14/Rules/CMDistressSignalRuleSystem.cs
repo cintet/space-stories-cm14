@@ -8,7 +8,6 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
-using Content.Server.Chat.Managers;
 using Content.Server.Mind;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Power.Components;
@@ -52,7 +51,6 @@ using Content.Shared.Physics;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Shuttles.Components;
-using Content.Shared.Chat;
 using Content.Shared.Ghost;
 using Robust.Server.Audio;
 using Robust.Server.Containers;
@@ -115,7 +113,6 @@ public sealed class CMDistressSignalRuleSystem : GameRuleSystem<CMDistressSignal
     [Dependency] private readonly IVoteManager _voteManager = default!;
     [Dependency] private readonly XenoSystem _xeno = default!;
     [Dependency] private readonly XenoEvolutionSystem _xenoEvolution = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;  // Stories-Bioscan
 
     private static readonly ProtoId<DamageTypePrototype> CrashLandDamageType = "Blunt";
     private const int CrashLandDamageAmount = 10000;
@@ -168,6 +165,7 @@ public sealed class CMDistressSignalRuleSystem : GameRuleSystem<CMDistressSignal
         _hyperSleepChamberQuery = GetEntityQuery<HyperSleepChamberComponent>();
         _xenoNestedQuery = GetEntityQuery<XenoNestedComponent>();
 
+        SubscribeLocalEvent<LoadingMapsEvent>(OnMapLoading);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
         SubscribeLocalEvent<RulePlayerSpawningEvent>(OnRulePlayerSpawning);
         SubscribeLocalEvent<PlayerSpawningEvent>(OnPlayerSpawning,
@@ -207,6 +205,13 @@ public sealed class CMDistressSignalRuleSystem : GameRuleSystem<CMDistressSignal
     {
         if (ev.WasModified<EntityPrototype>())
             ReloadPrototypes();
+    }
+
+    private void OnMapLoading(LoadingMapsEvent ev)
+    {
+        SelectRandomPlanet();
+        //Just in case the info text is not updated previousely
+        GameTicker.UpdateInfoText();
     }
 
     private void OnRulePlayerSpawning(RulePlayerSpawningEvent ev)
@@ -532,6 +537,7 @@ public sealed class CMDistressSignalRuleSystem : GameRuleSystem<CMDistressSignal
             //Just to make sure the planet gets reset
             ResetSelectedPlanet();
             return;
+        }
 
         var rules = QueryAllRules();
         while (rules.MoveNext(out var comp, out _))
@@ -1333,78 +1339,6 @@ public sealed class CMDistressSignalRuleSystem : GameRuleSystem<CMDistressSignal
             name += $"-{_random.Pick(_operationSuffixes)}";
 
         return name.Trim();
-    }
-    
-    public void BioscanAnnounce()
-    {
-        _almayerMaps.Clear();
-        var almayerQuery = EntityQueryEnumerator<AlmayerComponent, TransformComponent>();
-        while (almayerQuery.MoveNext(out _, out var xform))
-            _almayerMaps.Add(xform.MapID);
-
-        xenosAliveCount = 0;
-        xenosOnPlanetCount = 0;
-        xenosOnShipCount = 0;
-        var xenos = EntityQueryEnumerator<XenoComponent, MobStateComponent, TransformComponent>();
-        while (xenos.MoveNext(out var xenoId, out var xenoComp, out var mobState, out var xform))
-        {
-            if (xenoComp.Tier == 0 ||
-                !_mobState.IsAlive(xenoId, mobState))
-            {
-                continue;
-            }
-            
-            xenosAliveCount++;
-
-            if (_almayerMaps.Contains(xform.MapID))
-                xenosOnShipCount++;
-
-            if (!_almayerMaps.Contains(xform.MapID))
-                xenosOnPlanetCount++;
-        }
-
-        marinesAliveCount = 0;
-        marinesOnPlanetCount = 0;
-        marinesOnShipCount = 0;
-        var marines = EntityQueryEnumerator<MarineComponent, MobStateComponent, TransformComponent>();
-        while (marines.MoveNext(out var marineId, out _, out var mobState, out var xform))
-        {
-            if (!_mobState.IsAlive(marineId, mobState))
-                continue;
-
-            marinesAliveCount++;
-
-            if (_almayerMaps.Contains(xform.MapID))
-                marinesOnShipCount++;
-
-            if (!_almayerMaps.Contains(xform.MapID))
-                marinesOnPlanetCount++;
-        }
-
-        var wrappedMessage = Loc.GetString("ai-announcement-bioscan-xeno", ("marineCount", marinesAliveCount));
-        var filter = Filter.Empty()
-            .AddWhereAttachedEntity(e =>
-                HasComp<XenoComponent>(e)
-            );
-        var sound = new SoundPathSpecifier("/Audio/_RMC14/Xeno/alien_queen_command3.ogg");
-        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, wrappedMessage, wrappedMessage, default, false, true, null);
-        _audio.PlayGlobal(sound, filter, true, AudioParams.Default.WithVolume(-2f));
-
-        wrappedMessage = Loc.GetString("ai-announcement-bioscan-marine", ("xenoCount", xenosAliveCount), ("marineCount", marinesAliveCount));
-        filter = Filter.Empty()
-            .AddWhereAttachedEntity(e =>
-                HasComp<MarineComponent>(e)
-            );
-        sound = new SoundPathSpecifier("/Audio/_Stories/AI/bioscan.ogg");
-        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, wrappedMessage, wrappedMessage, default, false, true, null);
-        _audio.PlayGlobal(sound, filter, true, AudioParams.Default.WithVolume(-2f));
-
-        wrappedMessage = Loc.GetString("ai-announcement-bioscan-ghost", ("xenoOnPlanetCount", xenosOnPlanetCount), ("xenoOnShipCount", xenosOnShipCount), ("marineOnPlanetCount", marinesOnPlanetCount), ("marineOnShipCount", marinesOnShipCount));
-        filter = Filter.Empty()
-            .AddWhereAttachedEntity(e =>
-                HasComp<GhostComponent>(e)
-            );
-        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Radio, wrappedMessage, wrappedMessage, default, false, true, null);
     }
 
     // TODO RMC14 this would be literally anywhere else if the code for loading maps wasn't dogshit and broken upstream
