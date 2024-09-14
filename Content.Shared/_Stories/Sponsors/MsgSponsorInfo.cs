@@ -31,6 +31,9 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("whitelistRoleTimeBypass")]
     public bool WhitelistRoleTimeBypass { get; set; } = false;
+
+    [JsonPropertyName("ghostSkin")]
+    public string GhostSkin { get; set; } = "MobObserver";
 }
 
 

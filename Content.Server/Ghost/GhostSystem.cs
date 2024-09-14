@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server._Stories.Sponsors;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
@@ -44,6 +45,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly TransformSystem _transformSystem = default!;
         [Dependency] private readonly VisibilitySystem _visibilitySystem = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
+        [Dependency] private readonly SponsorsManager _partners = default!; // Stories-Sponsors
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -447,8 +449,14 @@ namespace Content.Server.Ghost
                 _minds.TransferTo(mind.Owner, null, createGhost: false, mind: mind.Comp);
                 return null;
             }
-
-            var ghost = SpawnAtPosition(GameTicker.ObserverPrototypeName, spawnPosition.Value);
+            // Stories-Sponsor-Ghosts-Start
+            var proto = GameTicker.ObserverPrototypeName;
+            if (mind.Comp.UserId != null && _partners.TryGetInfo(mind.Comp.UserId.Value, out var sponsorData))
+            {
+                proto = sponsorData?.GhostSkin;
+            }
+            var ghost = SpawnAtPosition(proto, spawnPosition.Value);
+            // Stories-Sponsor-Ghosts-End
             var ghostComponent = Comp<GhostComponent>(ghost);
 
             // Try setting the ghost entity name to either the character name or the player name.
