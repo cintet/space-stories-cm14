@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using Content.Server._Stories.Sponsors;
+using Content.Shared._Stories.AntiGrief.Cadet;
 using Content.Server.Administration.Managers;
 using Content.Server.GameTicking.Events;
 using Content.Server.Spawners.Components;
@@ -11,6 +12,7 @@ using Content.Shared._RMC14.Vendors;
 using Content.Shared.Database;
 using Content.Shared.Mind;
 using Content.Shared.Players;
+using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
@@ -33,6 +35,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly IEntityManager _entities = default!; // Stories-Sponsors
         [Dependency] private readonly SponsorsManager _sponsorManager = default!; // Stories-Sponsors
         [Dependency] private readonly SharedCMAutomatedVendorSystem _automatedVendor = default!; // Stories-Sponsors
+        [Dependency] private readonly ISharedPlaytimeManager _playtimeManager = default!; // Stories-AntiGrief
 
         [ValidatePrototypeId<EntityPrototype>]
         public const string ObserverPrototypeName = "MobObserver";
@@ -305,6 +308,17 @@ namespace Content.Server.GameTicking
                     Loc.GetString("job-greet-planet-name", ("planetName",_distressSignal.SelectedPlanetMapName)));
             }
 
+            // Stories-AntiGrief
+            var playtime = _playtimeManager.GetPlayTimes(player);
+
+            if (playtime.TryGetValue(PlayTimeTrackingShared.TrackerOverall, out TimeSpan overallTime) &&
+                overallTime <= TimeSpan.FromHours(1))
+            {
+                EntityManager.AddComponent<CadetComponent>(mob);
+            }
+            // Stories-AntiGrief
+
+            // Stories-Sponsors
             if (_entities.TryGetComponent(mob, out CMVendorUserComponent? vendorUser)
                 && _sponsorManager.TryGetInfo(player.UserId, out var info)
                 && (info.SponsorPoints != null || info.SponsorPointsAlt != null))
@@ -312,6 +326,8 @@ namespace Content.Server.GameTicking
                 _automatedVendor.SetExtraPoints((mob, vendorUser), "Sponsor", info.SponsorPoints);
                 _automatedVendor.SetExtraPoints((mob, vendorUser), "SponsorAlt", info.SponsorPointsAlt);
             }
+            // Stories-Sponsor
+
             // We raise this event directed to the mob, but also broadcast it so game rules can do something now.
             PlayersJoinedRoundNormally++;
             var aev = new PlayerSpawnCompleteEvent(mob,

@@ -2,6 +2,7 @@ using System.Numerics;
 using Content.Shared._RMC14.Attachable.Components;
 using Content.Shared._RMC14.Attachable.Events;
 using Content.Shared._RMC14.Xenonids;
+using Content.Shared._Stories.AntiGrief.Cadet;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.DoAfter;
@@ -207,6 +208,20 @@ public sealed class AttachableToggleableSystem : EntitySystem
             args.Cancelled = true;
             return;
         }
+
+        // Stories-AntiGrief-Start
+        if (HasComp<CadetComponent>(args.User))
+        {   
+            args.Cancelled = true;
+
+            _popupSystem.PopupClient(
+                Loc.GetString("rmc-attachable-shoot-fail-cadet", ("attachable", attachable)),
+                args.User,
+                args.User,
+                PopupType.SmallCaution);
+            return;
+        }
+        // Stories-AntiGrief-End
 
         if (attachable.Comp.WieldedUseOnly &&
             (!_attachableHolderSystem.TryGetHolder(attachable.Owner, out EntityUid? holderUid) ||
