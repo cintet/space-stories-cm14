@@ -21,7 +21,6 @@
       amount: 2
     - id: CMM96SSniperRifle
 #    - id: CMFacepaintSniper
-    - id: CMSpotterKit
   - type: CMChangeUserOnVend
     addComponents:
     - type: SniperWhitelist

@@ -142,6 +142,31 @@
       color: "#00CDEA"
 
 - type: entity
+  parent: RMCMagazineRifleM4SPRA19
+  id: RMCMagazineRifleM4SPRA19Incendiary
+  name: "M4SPR A19 magazine (incendiary)"
+  description: "A magazine of incendiary A19 rounds for use in the M4SPR battle rifle."
+  components:
+  - type: Tag
+    tags:
+    - CMMagazineRifle
+    - RMCMagazineRifleM4SPRA19Incendiary
+  - type: BallisticAmmoProvider
+    proto: RMCCartridgeRifleM4SPRA19Incendiary
+    whitelist:
+      tags:
+      - RMCCartridgeRifleM4SPRA19Incendiary
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Magazines/m4spra19.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: ammo_band
+      color: "#9C2219"
+
+- type: entity
   parent: CMBaseCartridgeRifle
   id: RMCCartridgeRifleM4SPRA19
   name: cartridge (A19 high-velocity)
@@ -166,6 +191,19 @@
     - RMCCartridgeRifleM4SPRA19Impact
   - type: CartridgeAmmo
     proto: BulletRifleM4SPRA19Impact
+
+- type: entity
+  parent: RMCCartridgeRifleM4SPRA19
+  id: RMCCartridgeRifleM4SPRA19Incendiary
+  name: cartridge (A19 incendiary)
+  description: A incendiary A19 cartridge. Fits in M4SPR custom magazines.
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - RMCCartridgeRifleM4SPRA19Incendiary
+  - type: CartridgeAmmo
+    proto: BulletRifleM4SPRA19Incendiary
 
 - type: entity
   parent: RMCBaseBullet
@@ -197,6 +235,21 @@
     superSlowTime: 4
     slowTime: 10
 
+- type: entity
+  parent: RMCBaseBullet
+  id: BulletRifleM4SPRA19Incendiary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 20
+        Heat: 10
+  - type: CMArmorPiercing
+    amount: 20
+  - type: IgniteOnCollide
+    fireStacks: 1
+
 - type: Tag
   id: RMCMagazineRifleM4SPRA19
 
@@ -204,7 +257,13 @@
   id: RMCMagazineRifleM4SPRA19Impact
 
 - type: Tag
+  id: RMCMagazineRifleM4SPRA19Incendiary
+
+- type: Tag
   id: RMCCartridgeRifleM4SPRA19
 
 - type: Tag
   id: RMCCartridgeRifleM4SPRA19Impact
+
+- type: Tag
+  id: RMCCartridgeRifleM4SPRA19Incendiary
