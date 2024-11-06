@@ -39,6 +39,56 @@
         points: 10
       - id: StoriesSprayTiger
         points: 7
+    - name: Плащи
+      entries:
+      - id: ClothingNeckCloakAceOfHeart
+        points: 1
+      - id: ClothingNeckCloakAceOfSpades
+        points: 1
+      - id: ClothingNeckCloakAmerica
+        points: 4
+      - id: ClothingNeckCloakBloodySkull
+        points: 2
+      - id: ClothingNeckCloakBreakThrough
+        points: 2
+      - id: ClothingNeckCloakConductor
+        points: 1
+      - id: ClothingNeckCloakDareDevil
+        points: 3
+      - id: ClothingNeckCloakDuty
+        points: 2
+      - id: ClothingNeckCloakFirstShield
+        points: 2
+      - id: ClothingNeckCloakGlory
+        points: 2
+      - id: ClothingNeckCloakHeraldOfBetrayal
+        points: 3
+      - id: ClothingNeckCloakHolyBlades
+        points: 2
+      - id: ClothingNeckCloakHolyHammer
+        points: 2
+      - id: ClothingNeckCloakHolyScripture
+        points: 2
+      - id: ClothingNeckCloakHolySpear
+        points: 2
+      - id: ClothingNeckCloakImperator
+        points: 2
+      - id: ClothingNeckCloakInquisition
+        points: 1
+      - id: ClothingNeckCloakMorgenstern
+        points: 2
+      - id: ClothingNeckCloakPiercingPoison
+        points: 3
+      - id: ClothingNeckCloakRapier
+        points: 3
+      - id: ClothingNeckCloakRedDemon
+        points: 2
+      - id: ClothingNeckCloakSparta
+        points: 3
+      - id: ClothingNeckCloakSpoilage
+        points: 1
+      - id: ClothingNeckCloakStrongholdOfWorld
+        points: 3
 
 - type: entity
   parent: ColMarTechBase
