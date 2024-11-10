@@ -1,11 +1,11 @@
 ent-WeaponRifleM4SPRCustom = модифицированная боевая винтовка M4RA
     .desc = Усовершенствованная версия уже отличной M4RA. Способна использовать патроны A19, имея при этом лучшую точность и управляемость, но при этом сложнее в использовании.  Также может использовать обычные магазины M4RA с меньшим уроном.
-ent-RMCMagazineRifleM4SPRA19 = магазин M4RA для патронов A19 (высокая скорость)
+ent-RMCMagazineRifleM4SPRA19 = магазин M4RA A19 (высокоскоростной)
     .desc = Магазин для винтовки M4RA, предназначенный для патронов A19 высокой скорости.
-ent-RMCMagazineRifleM4SPRA19Impact = магазин M4RA для патронов A19 (высокая скорость, высокий урон)
+ent-RMCMagazineRifleM4SPRA19Impact = магазин M4RA A19 (ударный)
     .desc = Магазин для винтовки M4RA, предназначенный для патронов A19 высокой скорости и высокой поражающей способности.
-ent-RMCMagazineRifleM4SPRA19Incendiary = M4SPR A19 magazine (incendiary)
-    .desc = A magazine of incendiary A19 rounds for use in the M4SPR battle rifle.
+ent-RMCMagazineRifleM4SPRA19Incendiary = магазин M4RA A19 (зажигательный)
+    .desc = Магазин с зажигательными патронами A19 для боевой винтовки M4RA.
 ent-RMCCartridgeRifleM4SPRA19 = патрон A19 высокой скорости
     .desc = Патрон A19 высокой скорости. Совместим с модифицированными магазинами M4RA.
 ent-RMCCartridgeRifleM4SPRA19Impact = патрон A19 высокой скорости и высокой поражающей способности

@@ -15,6 +15,15 @@ rmc-announcement-ares-message = [color=white][font size=16][bold]ARES v3.2 По�
 rmc-announcement-ares-lz-designated =
     Приказ отдан:
     { $name } была назначена основной зоной высадки.
+rmc-announcement-ares-online = [color=white][font size=16][bold]ARES Онлайн[/bold][/font][/color][color=red][font size=14][bold]
+    
+    { $message }[/bold][/font][/color]
+rmc-announcement-ares-map = [color=white][font size=16][bold]КСШ Алмайер[/bold][/font][/color][color=red][font size=14][bold]
+    
+    { $message }[/bold][/font][/color]
 rmc-announcement-cooldown = Пожалуйста, между объявлениями должно пройти не менее { $seconds } секунд.
+rmc-announcement-dropship-message = [color=white][font size=16][bold]Оповещение шаттла[/bold][/font][/color][color=red][font size=14][bold]
+    
+    { $message }[/bold][/font][/color]
 rmc-announcement-emergency-dropship-crash = [font size=14][bold][color=white]ВНИМАНИЕ[/color][/bold][/font][font size=12][color=red]
     ШАТТЛ НА КУРСЕ СТОЛКНОВЕНИЯ. СТОЛКНОВЕНИЕ НЕИЗБЕЖНО.[/color][/font]

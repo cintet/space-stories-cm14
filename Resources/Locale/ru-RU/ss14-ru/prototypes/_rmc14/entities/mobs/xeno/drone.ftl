@@ -1,5 +1,5 @@
-ent-CMXenoDroneBase = Drone
-    .desc = An alien drone.
+ent-CMXenoDroneBase = Дрон
+    .desc = Инопланетный дрон.
 ent-CMXenoDrone = Дрон
     .desc = Инопланетный дрон.
 ent-CMXenoDroneGardener = { ent-CMXenoDroneBase }

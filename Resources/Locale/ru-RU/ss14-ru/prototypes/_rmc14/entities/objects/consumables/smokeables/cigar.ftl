@@ -3,3 +3,5 @@ ent-CMTarbackCigar = сигара тарбак
 ent-CMTarbackCigarSpent = { ent-CMTarbackCigar }
     .suffix = потрачено
     .desc = { ent-CMTarbackCigar.desc }
+ent-RMCTarbackTube = сигара тарбак
+    .desc = Одиночная сигара тарбак в защитной металлической трубке. Примерно такой же низкий класс, какой только можно получить. Скручена в Колумбии.

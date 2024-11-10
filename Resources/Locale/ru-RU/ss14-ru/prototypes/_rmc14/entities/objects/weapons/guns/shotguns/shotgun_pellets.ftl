@@ -12,3 +12,5 @@ ent-CMPelletShotgunFlechette = дротик
     .desc = { ent-CMPelletShotgunBase.desc }
 ent-CMPelletShotgunIncendiaryBuckshot = зажигательная дробь
     .desc = { ent-CMPelletShotgunBuckshot.desc }
+ent-RMCPelletShotgunBreaching = легкий разрывной снаряд
+    .desc = { ent-CMPelletShotgunBase.desc }

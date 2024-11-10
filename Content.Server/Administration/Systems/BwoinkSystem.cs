@@ -567,11 +567,12 @@ namespace Content.Server.Administration.Systems
 
             string bwoinkText;
             string adminPrefix = "";
+            Color? colorOverride = null;
 
             //Getting an administrator position
             if (_config.GetCVar(CCVars.AhelpAdminPrefix) && senderAdmin is not null && senderAdmin.Title is not null)
             {
-                adminPrefix = $"[bold]\\[{senderAdmin.Title}\\][/bold] ";
+                adminPrefix = $"[bold]{senderAdmin.Title}[/bold] ";
             }
 
             if (senderAdmin is not null &&
@@ -582,7 +583,9 @@ namespace Content.Server.Administration.Systems
             }
             else if (senderAdmin is not null && senderAdmin.HasFlag(AdminFlags.Adminhelp))
             {
-                bwoinkText = $"[color=red]{adminPrefix}{senderSession.Name}[/color]";
+                var prefs = _preferencesManager.GetPreferences(senderSession.UserId);
+                colorOverride = prefs.AdminOOCColor;
+                bwoinkText = $"[color={colorOverride.Value.ToHex()}]{adminPrefix}{senderSession.Name}[/color]";
             }
             else
             {

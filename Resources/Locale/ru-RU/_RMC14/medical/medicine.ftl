@@ -43,3 +43,4 @@ rmc-first-aid-container-label-text = ПП
 rmc-emergency-medicine-container-label-text = А
 rmc-dexalin-plus-container-label-text = ДЕ+
 rmc-epinephrine-container-label-text = ЭПИ
+rmc-custom-container-label-text = { $customLabel }

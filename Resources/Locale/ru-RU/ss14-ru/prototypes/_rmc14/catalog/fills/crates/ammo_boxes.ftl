@@ -1,6 +1,10 @@
-ent-RMCCrateBoxShellsShotgunSlugs = ящик пуль (100 пуль)
+ent-RMCCrateBoxShellsShotgunSlugs = ящик (100 пули)
     .desc = { ent-RMCCrateAmmo.desc }
-ent-RMCCrateBoxShellsShotgunBuckshot = ящик пуль (100 картечи)
+ent-RMCCrateBoxShellsShotgunBuckshot = ящик (100 картечь)
     .desc = { ent-RMCCrateAmmo.desc }
-ent-RMCCrateBoxShellsShotgunFlechette = ящик пуль (100 флешетты)
+ent-RMCCrateBoxShellsShotgunFlechette = ящик (100 флешетта)
+    .desc = { ent-RMCCrateAmmo.desc }
+ent-RMCCrateBoxShellsShotgunBreaching = ящик (120 разрывная дробь)
+    .desc = { ent-RMCCrateAmmo.desc }
+ent-RMCCrateBoxAmmo458 = ящик (300 .458)
     .desc = { ent-RMCCrateAmmo.desc }

@@ -1,0 +1,12 @@
+ent-RMCPlanetLV624 = LV-624
+    .desc = { "" }
+ent-RMCPlanetSolaris = Солярис Ридж
+    .desc = { "" }
+ent-RMCPlanetShiva = Снежный шар Шивы
+    .desc = { "" }
+ent-RMCPlanetFiorina = Орбитальная тюрьма Фиорина
+    .desc = { "" }
+ent-RMCPlanetTrijent = Дамба Триджент
+    .desc = { "" }
+ent-RMCPlanetVaradero = Новый Варадеро
+    .desc = { "" }
