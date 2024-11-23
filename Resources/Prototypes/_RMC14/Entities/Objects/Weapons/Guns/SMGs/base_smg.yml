@@ -38,7 +38,6 @@
   - type: GunDualWielding
     weaponGroup: Submachinegun
   - type: GunPointBlank
-  - type: GunGroupSpreadPenalty
     damageMultiplier: 0.4
   - type: RMCFireGroup
     group: Rifles

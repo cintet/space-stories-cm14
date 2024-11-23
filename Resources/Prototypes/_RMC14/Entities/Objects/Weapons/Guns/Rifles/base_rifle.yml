@@ -60,7 +60,6 @@
   - type: Appearance
   - type: RMCNameItemOnVend
     item: PrimaryGun
-  - type: GunGroupSpreadPenalty
   - type: RMCFireGroup
     group: Rifles
     delay: 2

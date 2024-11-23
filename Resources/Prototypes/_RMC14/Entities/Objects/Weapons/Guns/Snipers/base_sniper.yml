@@ -18,7 +18,6 @@
   - type: GunDualWielding
     weaponGroup: Rifle
   - type: GunPointBlank
-  - type: GunGroupSpreadPenalty
   - type: RMCFireGroup
     group: Shotgun
     delay: 4
