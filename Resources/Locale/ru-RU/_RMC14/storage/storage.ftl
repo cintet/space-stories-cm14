@@ -14,3 +14,5 @@ rmc-holster-verb = Развернуть
 rmc-storage-webbing-remove-verb = Снимите разгрузку
 rmc-storage-medal-remove-verb = Снять медаль
 rmc-storage-holster-eject-verb = Развернуть
+rmc-storage-nested-unable = Похоже, вы не можете открыть { THE($nested) }, пока он находится в { THE($parent) }.
+rmc-storage-store-skill-unable = Хранилище не может вместить этот предмет!

@@ -1,12 +1,12 @@
-ent-JumpsuitMarine = униформа USCM
+ent-JumpsuitMarine = униформа КМП США
     .desc = Стандартная форма морской пехоты. Имеет осколки легкого кевлара для защиты от колющего оружия и пуль.
     .suffix = Джунгли
-ent-CMJumpsuitMarineEngineer = униформа комтеха USCM
+ent-CMJumpsuitMarineEngineer = униформа комтеха КМП США
     .desc = Стандартное обмундирование боевого техника морской пехоты. Защищает от колюще-режущего оружия и пуль благодаря осколкам легкого кевлара.
     .suffix = Джунгли
 ent-CMJumpsuitMarineFormal = формальная морская форма
     .desc = { ent-JumpsuitMarine.desc }
-ent-CMJumpsuitMarineMedic = униформа санитара USCM
+ent-CMJumpsuitMarineMedic = униформа санитара КМП США
     .desc = Стандартное обмундирование санитара госпиталя морской пехоты. Имеют осколки легкого кевлара для защиты от колюще-режущего оружия и пуль.
     .suffix = Джунгли
 ent-CMJumpsuitMarineRTO = морская форма rto

@@ -12,12 +12,27 @@ rmc-wield-use-delay = Вам нужно подождать { $seconds } секу
 rmc-shoot-use-delay = Вам нужно подождать { $seconds } секунд, прежде чем снимать { THE($wieldable) }!
 rmc-shoot-harness-required = Требуется экипировка
 rmc-wear-smart-gun-required = Чтобы надеть его, вы должны быть оснащены умным оружием.
+rmc-shoot-id-lock-unauthorized = Триггер заблокирован. Неавторизованный пользователь.
+rmc-id-lock-unauthorized = Действия отклонены. Неавторизованный пользователь.
+rmc-id-lock-authorization = Вы поднимаете { $gun}, регистрируя себя как его владельца.
+rmc-id-lock-authorization-combat = Оружие { $gun } подает звуковой сигнал, регистрируя себя как его владельца.
+rmc-id-lock-toggle-lock = Вы { $action } блокируете id на { $gun }.
+rmc-id-lock-color-unauthorized = красный
+rmc-id-lock-color-authorized = шартрез
+rmc-id-lock-toggle-on = закрыт
+rmc-id-lock-toggle-off = открыт
+rmc-iff-toggle = Вы { $action } IFF на { $gun }.
+rmc-iff-toggle-off = отключить
+rmc-iff-toggle-on = включить
 rmc-revolver-spin = Вы вращаете цилиндр.
 rmc-examine-text-weapon-accuracy = Текущий множитель точности - [color={ $colour }]{ TOSTRING($accuracy, "F2") }[/color].
 rmc-examine-text-scatter-max = Текущий максимальный разброс составляет [color={ $colour }]{ TOSTRING($scatter, "F1") }[/color] градусов.
 rmc-examine-text-scatter-min = Текущий минимальный разброс составляет [color={ $colour }]{ TOSTRING($scatter, "F1") }[/color] градусов.
 rmc-examine-text-shots-to-max-scatter = Для достижения максимального разброса требуется [color={ $colour }]{ $shots }[/color] выстрелов.
 rmc-examine-text-iff = [color=cyan]Эта пушка будет игнорировать и стрелять мимо союзников![/color]
+rmc-examine-text-id-lock-no-user = [color=chartreuse]Она не зарегистрирована. Поднимите его, чтобы зарегистрировать себя как его владельца.[/color]
+rmc-examine-text-id-lock = [color=chartreuse]Он зарегистрирован на [/color][color={$color }]{$name }[/color][color=chartreuse].[/color]
+rmc-examine-text-id-lock-unlocked = [color=chartreuse]Он зарегистрирован на [/color][color={$color }]{$name }[/color][color=chartreuse], но его ограничения на огонь разблокированы.[/color]
 rmc-gun-rack-examine = [bold]Нажмите клавишу [color=cyan]уникального действия[/color] (по умолчанию пробел), чтобы сделать стойку перед выстрелом.[/bold]
 rmc-gun-rack-first-with = Сначала нужно вставить пистолет в { $key }!
 rmc-gun-rack-first = Сначала нужно поставить пистолет на предохранитель!
