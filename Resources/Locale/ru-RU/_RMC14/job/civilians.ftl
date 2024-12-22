@@ -1,4 +1,4 @@
-# Non USCM Personnel
+# Non КМП США Personnel
 cm-job-name-correspondent = Корреспондент
 cm-job-description-correspondent = Вы сообщаете обо всем, что считаете нужным опубликовать на страницах новостей.
 CMJobCorrespondent = Корреспондент

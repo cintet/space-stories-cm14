@@ -126285,7 +126285,7 @@ entities:
     - type: Transform
       pos: 204.5,158.5
       parent: 1
-- proto: WaterTankFull
+- proto: RMCTankReagentWater
   entities:
   - uid: 989
     components:
@@ -126543,7 +126543,7 @@ entities:
     - type: Transform
       pos: 165.5,133.5
       parent: 1
-- proto: WeldingFuelTankFull
+- proto: RMCTankReagentFuel
   entities:
   - uid: 1432
     components:
