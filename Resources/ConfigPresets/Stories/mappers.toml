@@ -7,6 +7,9 @@
 [adminlogs]
 enabled = false
 
+[admin]
+deadmin_on_join = false
+
 [game]
 hostname = "📚 Space Stories - Colonial Marines Mappers ⚙ [TTS]"
 desc = """

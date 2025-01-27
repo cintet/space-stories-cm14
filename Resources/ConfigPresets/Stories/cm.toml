@@ -14,6 +14,7 @@ role_ban_default_severity = "minor"
 department_ban_default_severity = "minor"
 server_ban_default_severity = "medium"
 server_ban_hwid_ban_default = false
+explosion_min_intensity = -1
 
 [ahelp]
 admin_prefix = true
@@ -24,9 +25,6 @@ space_wind = false
 monstermos_rip_tiles = false
 grid_impulse = false
 max_process_time = 1
-
-[audio]
-alert.explosion_min_intensity = -1
 
 [auth]
 mode = 1
@@ -70,8 +68,6 @@ tags = "lang:ru,rp:med,region:eu_e"
 
 [ic]
 flavor_text = true
-role_time = 0
-kill_crit = false
 
 [infolinks]
 bug_report = "https://discord.gg/space-stories-cm"
