@@ -87,7 +87,7 @@
   start: start
   graph:
   - node: start
-    entity: CMWeaponPistolM77
+    entity: RMCWeaponPistolM77
     edges:
     - to: fate
       steps:
@@ -115,14 +115,14 @@
   start: start
   graph:
   - node: start
-    entity: CMWeaponPistolMK80
+    entity: RMCMK80
     edges:
     - to: amethyst
       steps:
       - tag: STSprayAmethyst
         doAfter: 2
   - node: amethyst
-    entity: STWeaponPistolMK80Amethyst
+    entity: STMK80Amethyst
 
 - type: constructionGraph
   id: PistolSU6Construct

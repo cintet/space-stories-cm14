@@ -64,7 +64,6 @@ tags = "lang:ru,rp:med,region:eu_e"
 
 [ic]
 flavor_text = true
-enable_suicide = false
 
 [infolinks]
 bug_report = "https://discord.gg/space-stories-cm"
