@@ -809,11 +809,12 @@
   - type: XenoActionPlasma
     cost: 55
 
-- id: ActionXenoHighGallop
+- type: entity
+  id: ActionXenoHighGallop
   name: High Gallop
   description: Stuns foes in a 2x3 area in targeted direction, and slows them. Also flings back grenades.
   components:
-  - type: EntityTargetAction
+  - type: WorldTargetAction
     itemIconStyle: NoItem
     icon:
       sprite: _RMC14/Actions/xeno_actions.rsi
