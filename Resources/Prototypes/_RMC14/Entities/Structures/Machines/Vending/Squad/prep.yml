@@ -12,6 +12,9 @@
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/guns.rsi
   - type: CMAutomatedVendor
+    access:
+    - "CMAccessMarinePrep"
+    hackable: true
     sections:
     - name: Основное Огнестрельное Оружие
       entries:
@@ -91,6 +94,9 @@
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/clothing.rsi
   - type: CMAutomatedVendor
+    access:
+    - "CMAccessMarinePrep"
+    hackable: true
     sections:
     - name: Стандартное Оборудование
       entries:
@@ -250,6 +256,8 @@
         amount: 10
       - id: RMCGlassesMarineRpg
         amount: 10
+      - id: RMCGlassesMarineRpgOld
+        amount: 10
 #      - id: M5 Integrated Gas Mask
 #        amount: 10
 #      - id: M10 Helmet Netting
@@ -289,6 +297,10 @@
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/requisitions_ammo.rsi
   - type: CMAutomatedVendor
+    access:
+    - "CMAccessMarinePrep"
+    - "CMAccessRequisitions"
+    hackable: true
     sections:
     - name: Бронебойные Боеприпасы
       entries:
@@ -347,6 +359,10 @@
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/attachments.rsi
   - type: CMAutomatedVendor
+    access:
+    - "CMAccessMarinePrep"
+    - "CMAccessRequisitions"
+    hackable: true
     sections:
     - name: Еда
       entries:
@@ -423,6 +439,10 @@
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/attachments.rsi
   - type: CMAutomatedVendor
+    access:
+    - "CMAccessMarinePrep"
+    - "CMAccessRequisitions"
+    hackable: true
     sections: # TODO RMC14
     - name: Ствол
       entries:
