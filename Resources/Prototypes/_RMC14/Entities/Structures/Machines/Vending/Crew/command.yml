@@ -524,6 +524,11 @@
       entries:
       - id: RMCD50WinterWyvernBeltFilled
       - id: RMCMatebaBeltFilled
+    - name: Ceremonial Weapon
+      choices: { CMCeremonial: 1 }
+      entries:
+      - id: RMCScabbardCeremonialFilled
+        name: Commander's Ceremonial Sabre
     - name: Основные Боеприпасы
       entries:
       - id: CMMagazineRifleM54CMK1
