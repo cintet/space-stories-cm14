@@ -263,7 +263,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      state: prae_tail_fountain
+      state: tail_seize
 
 - type: entity
   parent: ActionXenoBase

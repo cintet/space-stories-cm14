@@ -834,7 +834,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      state: tremor
+      state: stomp
 
 - type: entity
   parent: ActionXenoBase
@@ -1183,7 +1183,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      state: dislocate
+      state: punch
 
 - type: entity
   parent: ActionXenoBase

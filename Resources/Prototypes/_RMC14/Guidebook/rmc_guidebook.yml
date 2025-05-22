@@ -71,7 +71,7 @@
 - type: guideEntry
   parent: RMC
   id: RMCGuideXenonidRoles
-  name: "Xenonid Castes"
+  name: "Касты Ксеноморфов" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideXenonidRoles.xml"
   children:
   - RMCGuideXenonidT1
@@ -83,7 +83,7 @@
 - type: guideEntry
   parent: RMC
   id: RMCGuideXenonidT1
-  name: "Tier 1 Xenonids"
+  name: "Ксеноморфы 1 Уровня" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideXenonidRoles.xml"
   children:
   - RMCGuideRoleDefender
@@ -93,7 +93,7 @@
 - type: guideEntry
   parent: RMC
   id: RMCGuideXenonidT2
-  name: "Tier 2 Xenonids"
+  name: "Ксеноморфы 2 Уровня" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideXenonidRoles.xml"
   children:
   - RMCGuideRoleWarrior
@@ -106,7 +106,7 @@
 - type: guideEntry
   parent: RMC
   id: RMCGuideXenonidT3
-  name: "Tier 3 Xenonids"
+  name: "Ксеноморфы 3 Уровня" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideXenonidRoles.xml"
   children:
   - RMCGuideRoleCrusher
@@ -207,42 +207,42 @@
   parent: RMC
   id: RMCGuideRoleDefender
   priority: 11
-  name: "Defender Guide"
+  name: "Руководство Защитника" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleDefender.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleSentinel
   priority: 12
-  name: "Sentinel Guide"
+  name: "Руководство Стража" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleSentinel.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleRunner
   priority: 13
-  name: "Runner Guide"
+  name: "Руководство Бегуна" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleRunner.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleWarrior
   priority: 14
-  name: "Warrior Guide"
+  name: "Руководство Война" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleWarrior.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleSpitter
   priority: 15
-  name: "Spitter Guide"
+  name: "Руководство Плеватель" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleSpitter.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleLurker
   priority: 16
-  name: "Lurker Guide"
+  name: "Руководство Охотника" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleLurker.xml"
   children:
     - RMCGuideRoleVampire
@@ -251,21 +251,21 @@
   parent: RMC
   id: RMCGuideRoleHivelord
   priority: 17
-  name: "Hivelord Guide"
+  name: "Руководство Лорда Улья" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleHivelord.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleBurrower
   priority: 18
-  name: "Burrower Guide"
+  name: "Руководство Бурильщика" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleBurrower.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleCarrier
   priority: 19
-  name: "Carrier Guide"
+  name: "Руководство Носителя" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleCarrier.xml"
   children:
     - RMCGuideRoleEggsac
@@ -274,14 +274,14 @@
   parent: RMC
   id: RMCGuideRoleCrusher
   priority: 20
-  name: "Crusher Guide"
+  name: "Руководство Крушителя" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleCrusher.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRolePraetorian
   priority: 21
-  name: "Praetorian Guide"
+  name: "Руководство Преторианца" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRolePraetorian.xml"
   children:
     - RMCGuideRoleValkyrie
@@ -292,77 +292,77 @@
   parent: RMC
   id: RMCGuideRoleRavager
   priority: 22
-  name: "Ravager Guide"
+  name: "Руководство Разрушителя" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleRavager.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleBoiler
   priority: 23
-  name: "Boiler Guide"
+  name: "Руководство Бойлера" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleBoiler.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleQueen
   priority: 24
-  name: "Queen Guide"
+  name: "Руководство Королевы" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleQueen.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideHiveStructures
   priority: 25
-  name: "Hive Structures Guide"
+  name: "Руководство Структур Улья" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideHiveStructures.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideResinHoles
   priority: 26
-  name: "Resin Holes Guide"
+  name: "Руководство Смоляных Дырок" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideResinHoles.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleValkyrie
   priority: 27
-  name: "Valkyrie Guide"
+  name: "Руководство Валькирии" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleValkyrie.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleOppressor
   priority: 28
-  name: "Oppressor Guide"
+  name: "Руководство Угнетателя" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleOppressor.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleVanguard
   priority: 29
-  name: "Vanguard Guide"
+  name: "Руководство Авангарда" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleVanguard.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleEggsac
   priority: 30
-  name: "Eggsac Guide"
+  name: "Руководство Кокона" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleEggsac.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleVampire
   priority: 31
-  name: "Vampire Guide"
+  name: "Руководство Вампира" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleVampire.xml"
 
 - type: guideEntry
   parent: RMC
   id: RMCGuideRoleParasite
   priority: 32
-  name: "Parasite Guide"
+  name: "Руководство Лицехвата" # Stories-Localise
   text: "/ServerInfo/Guidebook/_RMC14/Guides/RMCGuideRoleParasite.xml"
 
 # Chemistry stuff

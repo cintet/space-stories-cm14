@@ -40,7 +40,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      state: place_resin
+      state: retrieve_egg
 
 - type: entity
   id: ActionXenoSecreteStructure
