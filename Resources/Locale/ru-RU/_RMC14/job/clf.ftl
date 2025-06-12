@@ -21,5 +21,4 @@ rmc-clf-specialist = Специалист КОФ
 rmc-job-prefix-clf-specialist = СПЦ
 rmc-job-prefix-clf-cell-commander = КЯФ
 CMCLFSoldier = Солдат КОФ
-rmc-job-description-clf-soldier = ""
 rmc-job-prefix-clf-soldier = СК
