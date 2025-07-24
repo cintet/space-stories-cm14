@@ -186,14 +186,13 @@
   parent: ActionXenoBase
   name: Toggle Long-Range Sight
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: NoItem
     icon:
       sprite: _Stories/Actions/xeno_actions.rsi
       state: toggle_long_range
-    useDelay: 0.2
-  - type: InstantAction
     event: !type:XenoZoomActionEvent
+    useDelay: 0.2
 
 - type: entity
   parent: CMGuidebookActionXenoBase

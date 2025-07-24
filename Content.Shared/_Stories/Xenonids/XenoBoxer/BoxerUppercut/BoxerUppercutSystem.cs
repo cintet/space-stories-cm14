@@ -137,7 +137,7 @@ public sealed class BoxerUppercutSystem : EntitySystem
         SpawnAttachedTo(comp.Effect, targetId.ToCoordinates());
         foreach (var (actionId, action) in _actions.GetActions(xeno))
         {
-            var actionEvent = _actions.GetEvent(xeno);
+            var actionEvent = _actions.GetEvent(actionId);
             if (actionEvent is BoxerPunchActionEvent or BoxerJabActionEvent)
                 _actions.SetCooldown(actionId, comp.Cooldown);
         }

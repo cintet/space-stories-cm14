@@ -73,7 +73,7 @@ public sealed class BoxerPunchSystem : EntitySystem
 
         foreach (var (actionId, action) in _actions.GetActions(xeno))
         {
-            var actionEvent = _actions.GetEvent(xeno);
+            var actionEvent = _actions.GetEvent(actionId);
             if (actionEvent is BoxerJabActionEvent && tracker.Count != koComp.MaxKO)
                 _actions.SetCooldown(actionId, comp.Cooldown);
         }
