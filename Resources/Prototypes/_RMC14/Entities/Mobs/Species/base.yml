@@ -354,6 +354,8 @@
       - CMAutomatedVendor
       - FaxMachine
       - RMCDoorButton
+      - OrbitalCannonFuel
+      - OrbitalCannonWarhead
       tags:
       - RMCDropshipEnginePoint
     range: 1.8

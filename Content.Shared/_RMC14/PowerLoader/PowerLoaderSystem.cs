@@ -5,6 +5,7 @@ using Content.Shared._RMC14.Dropship.AttachmentPoint;
 using Content.Shared._RMC14.Dropship.Fabricator;
 using Content.Shared._RMC14.Dropship.Utility.Components;
 using Content.Shared._RMC14.Dropship.Weapon;
+using Content.Shared._RMC14.Interaction; // <-- ДОБАВЬТЕ ЭТУ СТРОЧКУ
 using Content.Shared._RMC14.Map;
 using Content.Shared._RMC14.Marines.Skills;
 using Content.Shared._RMC14.PowerLoader.Events;
@@ -325,10 +326,15 @@ public sealed class PowerLoaderSystem : EntitySystem
         if (!_hands.IsHolding(user, ent))
             return;
 
-        var source = ent.Owner.ToCoordinates();
-        var coords = _transform.GetMoverCoordinates(args.ClickLocation);
-        coords = coords.SnapToGrid(EntityManager, _mapManager);
-        if (!source.TryDistance(EntityManager, coords, out var distance))
+        var interactionRange = InteractionRange;
+        if (TryComp<IgnoreInteractionRangeComponent>(user, out var ignoreRange))
+            interactionRange = ignoreRange.Range;
+
+        var sourceCoords = _transform.GetMoverCoordinates(user);
+        var targetCoords = _transform.GetMoverCoordinates(args.ClickLocation);
+        targetCoords = targetCoords.SnapToGrid(EntityManager, _mapManager);
+
+        if (!sourceCoords.TryDistance(EntityManager, targetCoords, out var distance))
             return;
 
         args.Handled = true;
@@ -343,7 +349,7 @@ public sealed class PowerLoaderSystem : EntitySystem
             return;
         }
 
-        if (distance > InteractionRange)
+        if (distance > interactionRange)
         {
             var msg = Loc.GetString("rmc-power-loader-too-far");
             foreach (var buckled in GetBuckled(user))
@@ -355,8 +361,8 @@ public sealed class PowerLoaderSystem : EntitySystem
         }
 
         var group = Impassable | MidImpassable | HighImpassable | InteractImpassable | MobLayer;
-        if (_rmcMap.IsTileBlocked(coords, group) ||
-            _rmcMap.TileHasStructure(coords))
+        if (_rmcMap.IsTileBlocked(targetCoords, group) ||
+            _rmcMap.TileHasStructure(targetCoords))
         {
             var msg = Loc.GetString("rmc-power-loader-cant-drop-occupied", ("drop", ent));
             foreach (var buckled in GetBuckled(user))
@@ -368,7 +374,7 @@ public sealed class PowerLoaderSystem : EntitySystem
         }
 
         var used = args.Used;
-        if (_hands.TryDrop(user, used, coords, false))
+        if (_hands.TryDrop(user, used, targetCoords, false))
         {
             _transform.AnchorEntity((used, Transform(used)));
             SyncHands((user, loader));
