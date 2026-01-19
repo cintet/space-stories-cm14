@@ -56,6 +56,13 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         _rmcPlayTime.Updated += () => Updated?.Invoke();
     }
 
+    // Stories-Start
+    public void NotifyUpdated()
+    {
+        Updated?.Invoke();
+    }
+    // Stories-End
+
     private void ClientOnRunLevelChanged(object? sender, RunLevelChangedEventArgs e)
     {
         if (e.NewLevel == ClientRunLevel.Initialize)
@@ -63,6 +70,7 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
             // Reset on disconnect, just in case.
             _roles.Clear();
             _roleBans.Clear(); // Stories-Hunter
+            _jobWhitelist = null; // Stories-Hunter
         }
     }
 
@@ -178,11 +186,11 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         {
             if (IsWhitelistedInternal(job.ID))
                 return true;
-        // RMC14-Whitelist-Tweak-Start
 
             reason = FormattedMessage.FromUnformatted(Loc.GetString("role-not-whitelisted"));
             return false;
         }
+        // RMC14-Whitelist-Tweak-End
 
         return true;
     }
